@@ -51,4 +51,15 @@ IP/Domain List:
   Downloads (wget ss.w.03.work, cron, rtn, apache.64, apache.86, apache.arm, apache.ppc)  : 208.85.177.238:80
   IRC (#allornothing)           : 217.118.128.97:443
   IRC (#Borgir)                 : 37.59.48.97:443 / ending.publicvm.com
+  
+VT:
+
+  apache.64:
+     https://www.virustotal.com/en/file/c2af14f6d551015236bd161d667cfd38a9dc2a004a9e8bd41beead6107f19628/analysis/1411122340/
+  apache.86:
+     https://www.virustotal.com/en/file/0e006de8fb7ca98bf389c64c1a127b90796c1ceed58f7fa7d502e1ffd013be56/analysis/1411122356/
+  apache.arm:   
+     https://www.virustotal.com/en/file/4730804fb5049a78877a4d6f5f7969b52d95950d2072f8c9e984f0ed6abf7a21/analysis/1411122370/
+  apache.ppc:
+     https://www.virustotal.com/en/file/7094d847f0230a20bc2c11456bcfcdf32eb32b14928a9db6c6caeddce70e0454/analysis/1411122387/
 
