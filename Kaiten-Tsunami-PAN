@@ -1,0 +1,54 @@
+RFI Exploit Flow:
+          
+    CVE-2012-2335
+          |
+          |----- wget phpR07 (perl)
+                    |
+                    |----- IF no parameters (no IP Addres passed)
+                    |             |
+                    |             |----- Connect to hardcoded IP over 443 (SYN only, no further C&C - not functional?)
+                    |----- IF parameter passed (IP Address)
+                                  |
+                                  |----- Connect to passed IP over 443 (IRC, no encryption)
+                                            |
+                                            |----- wget ss.w.03.work (script)
+                                            |----- wget cron (cron job to check/download rtn)
+                                            |----- wget rtn  (script)
+                                                      |
+                                                      | uname -m
+                                                          |
+                                                          |----- apache.86   (ELF)
+                                                          |----- apache.64   (ELF)
+                                                          |----- apache.arm  (ELF)
+                                                          |----- apache.ppc  (ELF)
+
+Collected Artifacts:
+
+  apache.64:        ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, BuildID[sha1]=03362c482bd79276df1d1967f379c3d794e994d6, not stripped
+  apache.86:        ELF 32-bit LSB  executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.9, not stripped
+  apache.arm:       ELF 32-bit LSB  executable, ARM, EABI5 version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, BuildID[sha1]=6fc1ab20d69aba81a859c2f6a8b00fa4a9072334, not stripped
+  apache.ppc:       ELF 32-bit MSB  executable, PowerPC or cisco 4500, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.4.1, not stripped
+  cron:             ASCII text
+  phpR07:           data
+  rtn:              Bourne-Again shell script, ASCII text executable
+  ss.w.03.work:     POSIX shell script, ASCII text executable  
+
+MD5:
+  
+  apache.64:        de2e41048e3a54ac1e6bbae91ae999ab
+  apache.86:        c404884ea97fd7bfd4b1f45acd812f7a
+  apache.arm:       7ebfa30920a9f2157c85ed9407b17f4a
+  apache.ppc:       a3d268c3379784124e286c60b5088c62
+  cron:             7f91b28ca9ef93292d6f0512fc358ba7
+  phpR07:           f7896760e8b2e517e81770e527b6873d
+  rtn:              b62bbe5281eb7d07a34e6bbd7214b5c6
+  ss.w.03.work:     23bb29cd7704bc66db5a096510f97b94
+  
+IRC:  #allornothing, #Borgir:p06tain
+
+IP/Domain List:
+  
+  Downloads (wget ss.w.03.work, cron, rtn, apache.64, apache.86, apache.arm, apache.ppc)  : 208.85.177.238:80
+  IRC (#allornothing)           : 217.118.128.97:443
+  IRC (#Borgir)                 : 37.59.48.97:443 / ending.publicvm.com
+
