@@ -9,7 +9,7 @@ RFI Exploit Flow:
                     |             |----- Connect to hardcoded IP over 443 (SYN -->, <-- RST, no further C&C, IP: 194.24.228.203:443)
                     |----- IF parameter passed (IP Address)
                                   |
-                                  |----- Connect to passed IP over 443 (IRC, no encryption, IP: 214.118.128.97:443)
+                                  |----- Connect to passed IP over 443 (IRC, no encryption, IP: 217.118.128.97:443)
                                             |
                                             |----- wget ss.w.03.work (script, IP: 208.85.177.238:80)
                                             |----- wget cron (cron job to check if exists/download rtn, IP: 208.85.177.238:80)
