@@ -6,18 +6,19 @@ RFI Exploit Flow:
                     |
                     |----- IF no parameters (no IP Addres passed)
                     |             |
-                    |             |----- Connect to hardcoded IP over 443 (SYN only, no further C&C - not functional?)
+                    |             |----- Connect to hardcoded IP over 443 (SYN -->, <-- RST, no further C&C, IP: 194.24.228.203:443)
                     |----- IF parameter passed (IP Address)
                                   |
-                                  |----- Connect to passed IP over 443 (IRC, no encryption)
+                                  |----- Connect to passed IP over 443 (IRC, no encryption, IP: 214.118.128.97:443)
                                             |
-                                            |----- wget ss.w.03.work (script)
-                                            |----- wget cron (cron job to check/download rtn)
-                                            |----- wget rtn  (script)
+                                            |----- wget ss.w.03.work (script, IP: 208.85.177.238:80)
+                                            |----- wget cron (cron job to check if exists/download rtn, IP: 208.85.177.238:80)
+                                            |----- wget rtn  (script, IP: 208.85.177.238:80)
                                                       |
                                                       | uname -m
                                                           |
                                                           |----- apache.86   (ELF)
+                                                                      |----- Connect to IRC (#Borgir:p06tain, IP: 37.59.48.97:443)
                                                           |----- apache.64   (ELF)
                                                           |----- apache.arm  (ELF)
                                                           |----- apache.ppc  (ELF)
