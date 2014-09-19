@@ -15,7 +15,7 @@ RFI Exploit Flow:
                                             |----- wget cron (cron job to check if exists/download rtn, IP: 208.85.177.238:80)
                                             |----- wget rtn  (script, IP: 208.85.177.238:80)
                                                       |
-                                                      | uname -m
+                                                      | uname -m (wget from IP: 208.85.177.238:80)
                                                           |
                                                           |----- apache.86   (ELF)
                                                                       |----- Connect to IRC (#Borgir:p06tain, IP: 37.59.48.97:443)
